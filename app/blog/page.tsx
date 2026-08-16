@@ -5,7 +5,7 @@ import { getAllPostsMeta, formatDate } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Insights, perspectives, and practical guidance on AI strategy, automation, and building production AI systems — from the ValueTrustAI team.",
+    "Insights, perspectives, and practical guidance on AI strategy, automation, and building production AI systems. Written by the ValueTrustAI team.",
 };
 
 export default function V2BlogIndexPage() {
@@ -76,7 +76,7 @@ export default function V2BlogIndexPage() {
           <p className="font-mono text-sm text-zinc-400">
             Want to discuss these concepts?{" "}
             <Link
-              href="/v2/contact"
+              href="/contact"
               className="text-white hover:text-zinc-400 transition-colors ml-2 underline underline-offset-4 decoration-zinc-800 hover:decoration-zinc-400"
             >
               Initialize communication →

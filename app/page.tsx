@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "AI Consulting & Engineering",
   description:
-    "ValueTrustAI helps businesses design, build, and deploy intelligent AI systems — from strategy through to production.",
+    "ValueTrustAI helps businesses design, build, and deploy intelligent AI systems. From strategy through to production.",
 };
 
 // ─── Data ────────────────────────────────────────────────────────────────────
@@ -103,13 +103,13 @@ const steps = [
     number: "02",
     title: "Prototype",
     description:
-      "We build a focused proof-of-concept within weeks — fast enough to validate, rigorous enough to trust. You see working AI, not slide decks.",
+      "We build a focused proof-of-concept within weeks, fast enough to validate and rigorous enough to trust. You see working AI, not slide decks.",
   },
   {
     number: "03",
     title: "Production",
     description:
-      "We engineer your solution for scale, reliability, and ongoing performance — with handover, documentation, and support built in from day one.",
+      "We engineer your solution for scale, reliability, and ongoing performance. Handover, documentation, and support are built in from day one.",
   },
 ];
 
@@ -142,18 +142,18 @@ export default function V2HomePage() {
             <p className="mt-6 max-w-2xl text-lg text-zinc-400 leading-relaxed">
               We help forward-thinking businesses design AI strategy, build custom
               AI solutions, and deploy intelligent automation that delivers
-              measurable results — from first idea to production.
+              measurable results, from first idea to production.
             </p>
             
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
-                href="/v2/contact"
-                className="group relative flex items-center justify-center overflow-hidden border border-white bg-white px-8 py-3.5 font-mono text-sm uppercase tracking-widest text-black transition-all hover:bg-black hover:text-white"
+                href="/contact"
+                className="group relative flex items-center justify-center overflow-hidden border border-white bg-white px-8 py-3.5 font-mono text-base font-bold uppercase tracking-widest text-black transition-all hover:bg-black hover:text-white"
               >
                 Book a discovery call
               </Link>
               <Link
-                href="/v2/services"
+                href="/services"
                 className="group relative flex items-center justify-center border border-zinc-700 bg-transparent px-8 py-3.5 font-mono text-sm uppercase tracking-widest text-zinc-300 transition-all hover:border-white hover:text-white"
               >
                 See our services
@@ -191,7 +191,7 @@ export default function V2HomePage() {
             {services.map((service, index) => (
               <Link
                 key={service.title}
-                href="/v2/services"
+                href="/services"
                 className="group relative bg-black p-8 transition-colors hover:bg-zinc-900/50 flex flex-col h-full"
               >
                 <div className="mb-6 font-mono text-xs text-zinc-600 transition-colors group-hover:text-white">
@@ -225,7 +225,7 @@ export default function V2HomePage() {
                 Our approach
               </p>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                From discovery to production — without the fluff
+                From discovery to production, without the fluff
               </h2>
               <p className="mt-4 text-base leading-relaxed text-zinc-400">
                 Most AI projects fail not because the technology isn&apos;t
@@ -234,7 +234,7 @@ export default function V2HomePage() {
                 and focused on value.
               </p>
               <Link
-                href="/v2/about"
+                href="/about"
                 className="mt-8 inline-flex items-center font-mono text-xs uppercase tracking-widest text-white hover:text-zinc-400 transition-colors"
               >
                 About our team →
@@ -281,13 +281,13 @@ export default function V2HomePage() {
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
-              href="/v2/contact"
-              className="inline-flex items-center justify-center border border-white bg-white px-8 py-4 font-mono text-sm uppercase tracking-widest text-black transition-all hover:bg-black hover:text-white"
+              href="/contact"
+              className="inline-flex items-center justify-center border border-white bg-white px-8 py-4 font-mono text-base font-bold uppercase tracking-widest text-black transition-all hover:bg-black hover:text-white"
             >
               Book a discovery call
             </Link>
             <Link
-              href="/v2/services"
+              href="/services"
               className="inline-flex items-center justify-center border border-zinc-700 bg-transparent px-8 py-4 font-mono text-sm uppercase tracking-widest text-zinc-300 transition-all hover:border-white hover:text-white"
             >
               Explore services

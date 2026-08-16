@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 
-// Metadata can't be exported from a client component — it lives in a
-// separate layout or a sibling server component. For now we set the
-// <title> via the global template in app/layout.tsx ("Contact | ValueTrustAI").
+// Metadata can't be exported from a client component.
+// Assuming layout or template handles it.
 
 type FormState = {
   name: string;
@@ -17,7 +16,7 @@ type SubmitStatus = "idle" | "submitting" | "success" | "error";
 
 const INITIAL: FormState = { name: "", email: "", company: "", message: "" };
 
-export default function ContactPage() {
+export default function V2ContactPage() {
   const [form, setForm] = useState<FormState>(INITIAL);
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -60,15 +59,15 @@ export default function ContactPage() {
   return (
     <>
       {/* ── Page Header ── */}
-      <section className="border-b border-gray-100 bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-indigo-600">
+      <section className="bg-black py-16 sm:py-24 border-b border-zinc-800">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="mb-3 font-mono text-xs uppercase tracking-widest text-zinc-500">
             Get in touch
           </p>
-          <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            Contact us
+          <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            Contact us.
           </h1>
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-gray-600">
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-zinc-400">
             Tell us about your goals and we&apos;ll get back to you within one
             business day.
           </p>
@@ -76,30 +75,30 @@ export default function ContactPage() {
       </section>
 
       {/* ── Body ── */}
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <section className="bg-black py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
 
             {/* Left: contact info */}
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-12">
               <div>
-                <h2 className="text-xl font-semibold text-gray-900">
+                <h2 className="text-xl font-semibold text-white">
                   Start a conversation
                 </h2>
-                <p className="mt-3 text-sm leading-relaxed text-gray-600">
+                <p className="mt-3 text-sm leading-relaxed text-zinc-400">
                   Whether you have a specific project in mind, want to explore
                   where AI fits in your business, or simply want an honest
-                  second opinion — we&apos;re happy to talk. No sales pitch,
+                  second opinion, we&apos;re happy to talk. No sales pitch,
                   no obligation.
                 </p>
               </div>
 
               {/* What to expect */}
               <div>
-                <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-400">
+                <h3 className="mb-6 font-mono text-xs uppercase tracking-widest text-zinc-500">
                   What happens next
                 </h3>
-                <ol className="flex flex-col gap-4">
+                <ol className="flex flex-col gap-6">
                   {[
                     {
                       step: "1",
@@ -115,10 +114,10 @@ export default function ContactPage() {
                     },
                   ].map(({ step, text }) => (
                     <li key={step} className="flex gap-4">
-                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-xs font-bold text-indigo-600">
-                        {step}
+                      <span className="font-mono text-sm font-bold text-white pt-0.5">
+                        {step}.
                       </span>
-                      <p className="text-sm leading-relaxed text-gray-600 pt-0.5">
+                      <p className="text-sm leading-relaxed text-zinc-400">
                         {text}
                       </p>
                     </li>
@@ -127,17 +126,17 @@ export default function ContactPage() {
               </div>
 
               {/* Direct email */}
-              <div className="rounded-2xl border border-gray-100 bg-gray-50 p-6">
-                <p className="text-xs font-semibold uppercase tracking-widest text-gray-400">
+              <div className="border border-zinc-800 bg-zinc-950 p-8">
+                <p className="font-mono text-xs uppercase tracking-widest text-zinc-500">
                   Prefer email?
                 </p>
                 <a
                   href="mailto:hello@valuetrustai.com"
-                  className="mt-2 block text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors"
+                  className="mt-3 block font-mono text-sm text-white hover:text-zinc-400 transition-colors"
                 >
                   hello@valuetrustai.com
                 </a>
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-2 text-xs text-zinc-600">
                   We respond within one business day.
                 </p>
               </div>
@@ -147,36 +146,36 @@ export default function ContactPage() {
             <div>
               {status === "success" ? (
                 /* Success state */
-                <div className="flex flex-col items-start rounded-2xl border border-green-100 bg-green-50 p-8">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
+                <div className="flex flex-col items-start border border-green-900 bg-green-950/20 p-8">
+                  <div className="mb-4 text-green-500">
                     <svg
-                      className="h-6 w-6 text-green-600"
+                      className="h-8 w-8"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth={2}
+                      strokeWidth={1.5}
                       viewBox="0 0 24 24"
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
+                        d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                       />
                     </svg>
                   </div>
-                  <h2 className="text-lg font-semibold text-gray-900">
-                    Thanks — we&apos;ll be in touch.
+                  <h2 className="text-lg font-semibold text-white">
+                    Request Received.
                   </h2>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600">
-                    Your message has been received. We typically respond within
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                    Your message has been processed. We typically respond within
                     one business day. In the meantime, feel free to explore our
-                    services.
+                    architecture.
                   </p>
                   <button
                     type="button"
                     onClick={() => setStatus("idle")}
-                    className="mt-6 text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors"
+                    className="mt-8 font-mono text-xs uppercase tracking-widest text-white hover:text-zinc-400 transition-colors"
                   >
-                    ← Send another message
+                    ← Initialize New Request
                   </button>
                 </div>
               ) : (
@@ -187,8 +186,8 @@ export default function ContactPage() {
                   className="flex flex-col gap-6"
                 >
                   {status === "error" && errorMessage && (
-                    <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-600">
-                      {errorMessage}
+                    <div className="border border-red-900 bg-red-950/20 p-4 text-sm text-red-400 font-mono">
+                      [ERROR] {errorMessage}
                     </div>
                   )}
 
@@ -196,9 +195,9 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="mb-1.5 block text-sm font-medium text-gray-700"
+                      className="mb-2 block font-mono text-xs uppercase tracking-widest text-zinc-400"
                     >
-                      Name <span className="text-red-500">*</span>
+                      Name <span className="text-white">*</span>
                     </label>
                     <input
                       id="name"
@@ -209,7 +208,7 @@ export default function ContactPage() {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="Jane Smith"
-                      className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 disabled:opacity-50"
+                      className="w-full border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-white placeholder:text-zinc-600 outline-none transition focus:border-white disabled:opacity-50"
                       disabled={status === "submitting"}
                     />
                   </div>
@@ -218,9 +217,9 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="mb-1.5 block text-sm font-medium text-gray-700"
+                      className="mb-2 block font-mono text-xs uppercase tracking-widest text-zinc-400"
                     >
-                      Email <span className="text-red-500">*</span>
+                      Email <span className="text-white">*</span>
                     </label>
                     <input
                       id="email"
@@ -231,7 +230,7 @@ export default function ContactPage() {
                       value={form.email}
                       onChange={handleChange}
                       placeholder="jane@company.com"
-                      className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 disabled:opacity-50"
+                      className="w-full border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-white placeholder:text-zinc-600 outline-none transition focus:border-white disabled:opacity-50"
                       disabled={status === "submitting"}
                     />
                   </div>
@@ -240,10 +239,10 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="company"
-                      className="mb-1.5 block text-sm font-medium text-gray-700"
+                      className="mb-2 block font-mono text-xs uppercase tracking-widest text-zinc-400"
                     >
                       Company{" "}
-                      <span className="text-xs font-normal text-gray-400">
+                      <span className="text-zinc-600">
                         (optional)
                       </span>
                     </label>
@@ -255,7 +254,7 @@ export default function ContactPage() {
                       value={form.company}
                       onChange={handleChange}
                       placeholder="Acme Corp"
-                      className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 disabled:opacity-50"
+                      className="w-full border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-white placeholder:text-zinc-600 outline-none transition focus:border-white disabled:opacity-50"
                       disabled={status === "submitting"}
                     />
                   </div>
@@ -264,9 +263,9 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="mb-1.5 block text-sm font-medium text-gray-700"
+                      className="mb-2 block font-mono text-xs uppercase tracking-widest text-zinc-400"
                     >
-                      Message <span className="text-red-500">*</span>
+                      Message <span className="text-white">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -276,7 +275,7 @@ export default function ContactPage() {
                       value={form.message}
                       onChange={handleChange}
                       placeholder="Tell us about your project, goals, or challenges…"
-                      className="w-full resize-none rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 disabled:opacity-50"
+                      className="w-full resize-none border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-white placeholder:text-zinc-600 outline-none transition focus:border-white disabled:opacity-50"
                       disabled={status === "submitting"}
                     />
                   </div>
@@ -285,12 +284,12 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-indigo-700 hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-sm"
+                    className="mt-4 inline-flex items-center justify-center border border-white bg-white px-8 py-4 font-mono text-sm uppercase tracking-widest text-black transition-all hover:bg-black hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {status === "submitting" ? (
                       <>
                         <svg
-                          className="h-4 w-4 animate-spin"
+                          className="mr-3 h-4 w-4 animate-spin text-current"
                           fill="none"
                           viewBox="0 0 24 24"
                         >
@@ -308,16 +307,15 @@ export default function ContactPage() {
                             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
                           />
                         </svg>
-                        Sending…
+                        Transmitting...
                       </>
                     ) : (
-                      "Send message"
+                      "Transmit Message"
                     )}
                   </button>
 
-                  <p className="text-xs text-gray-400">
-                    We respect your privacy. Your details are never shared with
-                    third parties.
+                  <p className="mt-4 font-mono text-xs text-zinc-600">
+                    // We respect your privacy. Details are never shared.
                   </p>
                 </form>
               )}

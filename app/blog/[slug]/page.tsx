@@ -32,7 +32,7 @@ export async function generateMetadata(
 
 // ─── Page ────────────────────────────────────────────────────────────────────
 
-export default async function V2BlogPostPage(
+export default async function BlogPostPage(
   props: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await props.params;
@@ -46,7 +46,7 @@ export default async function V2BlogPostPage(
       <section className="bg-black py-16 sm:py-24 border-b border-zinc-800">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <Link
-            href="/v2/blog"
+            href="/blog"
             className="mb-8 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-zinc-500 hover:text-white transition-colors"
           >
             <span className="text-xl leading-none">←</span> Return to index
@@ -93,13 +93,13 @@ export default async function V2BlogPostPage(
           {/* ── Post footer ── */}
           <div className="mt-20 flex flex-col items-start gap-8 border-t border-zinc-800 pt-12 sm:flex-row sm:items-center sm:justify-between">
             <Link
-              href="/v2/blog"
+              href="/blog"
               className="font-mono text-xs uppercase tracking-widest text-zinc-500 hover:text-white transition-colors"
             >
               ← Terminate session
             </Link>
             <Link
-              href="/v2/contact"
+              href="/contact"
               className="inline-flex items-center justify-center border border-white bg-white px-8 py-3 font-mono text-sm uppercase tracking-widest text-black transition-all hover:bg-black hover:text-white"
             >
               Initialize Contact
