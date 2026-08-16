@@ -142,7 +142,7 @@ export default function HomePage() {
             AI Consulting &amp; Engineering
           </p>
 
-          <h1 className="max-w-4xl text-5xl font-bold leading-[1.1] tracking-tight text-gray-900 sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-4xl text-5xl font-bold leading-[1.1] tracking-tighter text-gray-900 sm:text-6xl lg:text-7xl">
             ValueTrustAI —{" "}
             <span className="text-indigo-600">Intelligence you can act on.</span>
           </h1>
@@ -156,13 +156,13 @@ export default function HomePage() {
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="rounded-xl bg-indigo-600 px-7 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 transition-colors"
+              className="rounded-xl bg-indigo-600 px-7 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
             >
               Book a discovery call
             </Link>
             <Link
               href="/services"
-              className="rounded-xl border border-gray-300 bg-white px-7 py-3.5 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+              className="rounded-xl border border-gray-300 bg-white px-7 py-3.5 text-sm font-semibold text-gray-700 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-sm transition-all duration-200"
             >
               See our services →
             </Link>
@@ -214,7 +214,7 @@ export default function HomePage() {
               <Link
                 key={service.title}
                 href="/services"
-                className="group flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:border-indigo-200 hover:shadow-md"
+                className="group flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-indigo-200 hover:shadow-lg hover:-translate-y-1"
               >
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-colors group-hover:bg-indigo-100">
                   {service.icon}
@@ -301,13 +301,13 @@ export default function HomePage() {
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
-              className="rounded-xl bg-white px-8 py-3.5 text-sm font-semibold text-indigo-600 shadow hover:bg-indigo-50 transition-colors"
+              className="rounded-xl bg-white px-8 py-3.5 text-sm font-semibold text-indigo-600 shadow hover:bg-indigo-50 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
             >
               Book a discovery call
             </Link>
             <Link
               href="/services"
-              className="rounded-xl border border-indigo-400 px-8 py-3.5 text-sm font-semibold text-white hover:bg-indigo-700 transition-colors"
+              className="rounded-xl border border-indigo-400 px-8 py-3.5 text-sm font-semibold text-white hover:bg-indigo-700 hover:-translate-y-0.5 transition-all duration-200"
             >
               Explore services
             </Link>

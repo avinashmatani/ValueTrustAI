@@ -287,13 +287,13 @@ export default function ServicesPage() {
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="rounded-xl bg-white px-8 py-3.5 text-sm font-semibold text-indigo-600 shadow hover:bg-indigo-50 transition-colors"
+                className="rounded-xl bg-white px-8 py-3.5 text-sm font-semibold text-indigo-600 shadow hover:bg-indigo-50 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
               >
                 Book a discovery call
               </Link>
               <Link
                 href="/about"
-                className="rounded-xl border border-indigo-400 px-8 py-3.5 text-sm font-semibold text-white hover:bg-indigo-700 transition-colors"
+                className="rounded-xl border border-indigo-400 px-8 py-3.5 text-sm font-semibold text-white hover:bg-indigo-700 hover:-translate-y-0.5 transition-all duration-200"
               >
                 Meet the team →
               </Link>

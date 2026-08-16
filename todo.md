@@ -22,7 +22,7 @@
 ## 🔲 Still to Do
 
 ### 1. Wire contact form to real email service
-**Status:** Logs to console only — UI is done
+**Status:** Wired to Next.js API route (`/api/contact`); currently logging to console.
 **Pick one:**
 - [ ] **Resend** ← recommended (simple API, free tier 100 emails/day, great DX)
 - [ ] **Formspree** — no backend needed, just swap `handleSubmit` to POST a URL

@@ -31,14 +31,14 @@ export default function Header() {
             <Link
               key={href}
               href={href}
-              className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors"
+              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
             >
               {label}
             </Link>
           ))}
           <Link
             href="/contact"
-            className="ml-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 transition-colors"
+            className="ml-2 rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700 hover:-translate-y-0.5 hover:shadow-md shadow-sm transition-all duration-200"
           >
             Get in Touch
           </Link>
@@ -87,7 +87,7 @@ export default function Header() {
               key={href}
               href={href}
               onClick={() => setMenuOpen(false)}
-              className="rounded-lg px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+              className="rounded-lg px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors"
             >
               {label}
             </Link>

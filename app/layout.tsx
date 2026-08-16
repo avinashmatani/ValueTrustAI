@@ -49,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} scroll-smooth antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} scroll-smooth antialiased selection:bg-indigo-100 selection:text-indigo-900`}
     >
       <body className="flex min-h-screen flex-col bg-white text-gray-900 font-sans">
         <Header />
