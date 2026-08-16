@@ -1,6 +1,6 @@
 # ValueTrustAI — Website TODO
 
-> Last updated: 2026-08-16 (session 3)
+> Last updated: 2026-08-16 (session 4)
 > Track progress by changing `[ ]` to `[x]` when complete.
 
 ---
@@ -14,10 +14,11 @@
 - [x] Repo pushed to GitHub → `github.com/avinashmatani/ValueTrustAI` (private)
 - [x] `/services` — Full Services page (4 services, bullet points, "Who this is for", engagement models, CTA)
 - [x] `/about` — Mission, Team Story + stat cards, 4-phase Approach, 5 Values, CTA
+- [x] `/contact` — Lead form (Name, Email, Company, Message), spinner, success state, scoped metadata layout
 
 ---
 
-## 🔲 Pages Still to Build
+## 🔲 Still to Do
 
 ### 1. `/blog` — Blog Index + Posts
 **Status:** Index stub + one sample `.md` file
@@ -35,35 +36,30 @@
 
 ---
 
-### 2. `/contact` — Contact Page
-**Status:** Stub only
-**Needs your input:**
-- [ ] Real contact email address
-- [ ] Phone number (optional)
-- [ ] Office address / location (optional)
-- [ ] Calendly link or booking URL for "Book a discovery call" button
-- [ ] Which form fields do you want? (e.g. Name, Email, Company, Message, Budget range?)
-- [ ] Where should form submissions go? Options:
-  - Email via a service (Resend, SendGrid, Nodemailer)
-  - Third-party form (Formspree, Tally, Typeform embed)
-  - CRM integration (HubSpot, etc.)
+### 2. Contact form — wire to real email service
+**Status:** Logs to console; ready to wire
+**Options (pick one):**
+- [ ] **Resend** — recommended, simple API, free tier (100 emails/day)
+- [ ] **Formspree** — no backend needed, just a POST URL
+- [ ] **SendGrid** — enterprise-grade, more setup
+- [ ] **Calendly embed** — replace or supplement the form
 
 ---
 
 ### 3. Global / Branding
 **Needs your input:**
 - [ ] **Logo** — do you have a logo file (SVG/PNG)? Currently using text `ValueTrustAI`
-- [ ] **Tagline** — confirm final tagline (currently using: *"Intelligence you can act on."*)
-- [ ] **Brand colors** — confirm primary color (currently using Indigo). Any specific hex codes?
+- [ ] **Tagline** — confirm final tagline (currently: *"Intelligence you can act on."*)
+- [ ] **Brand colors** — confirm primary color (currently Indigo). Any specific hex codes?
 - [ ] **Favicon** — custom favicon or generate from logo?
-- [ ] **Google Analytics / tracking ID** — if you want analytics added
+- [ ] **Google Analytics ID** — if you want analytics
 - [ ] **Domain name** — for meta tags and canonical URLs (e.g. `valuetrustai.com`)
 
 ---
 
 ### 4. SEO & Meta
-**Status:** Basic `title` + `description` set per page built so far
-**To do (after all content is finalised):**
+**Status:** `title` + `description` set on all pages built so far
+**Remaining:**
 - [ ] Open Graph images for social sharing
 - [ ] `sitemap.xml` and `robots.txt`
 
@@ -73,29 +69,31 @@
 **Status:** Not yet deployed
 **Needs your input:**
 - [ ] Hosting preference:
-  - **Vercel** (recommended — native Next.js, free tier available)
+  - **Vercel** ← recommended (native Next.js, free tier, one-command deploy)
   - Netlify
   - Self-hosted / VPS
 - [ ] Domain already purchased? If yes, where (GoDaddy, Namecheap, Cloudflare)?
-- [ ] Environment variables needed (e.g. contact form API keys, analytics)
+- [ ] Environment variables needed once contact form is wired (e.g. `RESEND_API_KEY`)
 
 ---
 
-## 📋 Quick Input Checklist (share these and I'll build)
+## 📋 Quick Input Checklist
 
 | Item | Status |
 |---|---|
-| ~~Final services list (names + descriptions)~~ | ✅ Done |
+| ~~Final services list~~ | ✅ Done |
 | ~~Company story / mission~~ | ✅ Done |
 | ~~Team narrative~~ | ✅ Done |
-| Contact email + booking link | ⏳ Needed |
+| ~~Contact form (fields + UI)~~ | ✅ Done |
+| Contact form destination (email service) | ⏳ Needed |
+| Contact email address | ⏳ Needed |
+| Calendly / booking link | ⏳ Needed |
+| Blog post drafts (at least 1–2) | ⏳ Needed |
 | Logo file | ⏳ Needed |
 | Confirmed tagline | ⏳ Needed |
 | Brand colors / hex codes | ⏳ Needed |
-| Blog post drafts (at least 1–2) | ⏳ Needed |
 | Domain name | ⏳ Needed |
 | Hosting preference | ⏳ Needed |
-| Contact form destination | ⏳ Needed |
 | Analytics tracking ID | ⏳ Optional |
 | Partner / credential logos | ⏳ Optional |
 | Real team member bios + photos | ⏳ Optional |
@@ -106,7 +104,8 @@
 
 1. ~~**Services page**~~ ✅ Done
 2. ~~**About page**~~ ✅ Done
-3. **Contact page** — needed to capture leads immediately ← next up
-4. **Blog** — set up parser + first 2 posts
-5. **SEO + meta** — once all content is final
-6. **Deploy to Vercel** — go live
+3. ~~**Contact page**~~ ✅ Done
+4. **Blog** — set up markdown parser + first 2 posts ← next up
+5. **Wire contact form** — to email service once you choose one
+6. **SEO** — Open Graph images, sitemap, robots.txt
+7. **Deploy to Vercel** — go live
