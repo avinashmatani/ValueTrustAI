@@ -26,7 +26,7 @@ export default function V2Layout({
             href="/v2"
             className="text-xl font-bold tracking-tight text-white hover:opacity-80 transition-opacity"
           >
-            VALUETRUST_AI
+            ValueTrustAI
           </Link>
 
           {/* Desktop Nav */}
@@ -103,7 +103,7 @@ export default function V2Layout({
             {/* Brand */}
             <div className="sm:col-span-1">
               <Link href="/v2" className="text-lg font-bold tracking-tight text-white">
-                VALUETRUST_AI
+                ValueTrustAI
               </Link>
               <p className="mt-2 font-mono text-xs uppercase tracking-widest text-zinc-500">
                 Intelligence you can act on.
