@@ -1,6 +1,6 @@
 # ValueTrustAI — Website TODO
 
-> Last updated: 2026-08-16 (session 2)
+> Last updated: 2026-08-16 (session 3)
 > Track progress by changing `[ ]` to `[x]` when complete.
 
 ---
@@ -13,28 +13,13 @@
 - [x] Stub pages created — `/services`, `/about`, `/blog`, `/blog/[slug]`, `/contact`
 - [x] Repo pushed to GitHub → `github.com/avinashmatani/ValueTrustAI` (private)
 - [x] `/services` — Full Services page (4 services, bullet points, "Who this is for", engagement models, CTA)
+- [x] `/about` — Mission, Team Story + stat cards, 4-phase Approach, 5 Values, CTA
 
 ---
 
 ## 🔲 Pages Still to Build
 
-### 1. `/about` — About Page
-**Status:** Stub only
-**Needs your input:**
-- [ ] Company story / founding narrative (1–2 paragraphs)
-- [ ] Mission statement or values (e.g. 3 core values with descriptions)
-- [ ] Team members to feature:
-  - Name
-  - Role / title
-  - Short bio (2–3 sentences)
-  - Photo (or use initials/avatar as placeholder)
-  - LinkedIn URL (optional)
-- [ ] Any credentials, certifications, or partner logos (e.g. Microsoft, AWS, Google Cloud)?
-- [ ] Location(s) — city/country you operate from
-
----
-
-### 2. `/blog` — Blog Index + Posts
+### 1. `/blog` — Blog Index + Posts
 **Status:** Index stub + one sample `.md` file
 **Needs your input:**
 - [ ] Do you want markdown-based blog posts (MDX/gray-matter) or a CMS (e.g. Contentlayer, Sanity)?
@@ -50,7 +35,7 @@
 
 ---
 
-### 3. `/contact` — Contact Page
+### 2. `/contact` — Contact Page
 **Status:** Stub only
 **Needs your input:**
 - [ ] Real contact email address
@@ -65,7 +50,7 @@
 
 ---
 
-### 4. Global / Branding
+### 3. Global / Branding
 **Needs your input:**
 - [ ] **Logo** — do you have a logo file (SVG/PNG)? Currently using text `ValueTrustAI`
 - [ ] **Tagline** — confirm final tagline (currently using: *"Intelligence you can act on."*)
@@ -76,7 +61,7 @@
 
 ---
 
-### 5. SEO & Meta
+### 4. SEO & Meta
 **Status:** Basic `title` + `description` set per page built so far
 **To do (after all content is finalised):**
 - [ ] Open Graph images for social sharing
@@ -84,7 +69,7 @@
 
 ---
 
-### 6. Deployment
+### 5. Deployment
 **Status:** Not yet deployed
 **Needs your input:**
 - [ ] Hosting preference:
@@ -101,8 +86,8 @@
 | Item | Status |
 |---|---|
 | ~~Final services list (names + descriptions)~~ | ✅ Done |
-| Company story / mission | ⏳ Needed |
-| Team members (name, role, bio, photo) | ⏳ Needed |
+| ~~Company story / mission~~ | ✅ Done |
+| ~~Team narrative~~ | ✅ Done |
 | Contact email + booking link | ⏳ Needed |
 | Logo file | ⏳ Needed |
 | Confirmed tagline | ⏳ Needed |
@@ -113,14 +98,15 @@
 | Contact form destination | ⏳ Needed |
 | Analytics tracking ID | ⏳ Optional |
 | Partner / credential logos | ⏳ Optional |
+| Real team member bios + photos | ⏳ Optional |
 
 ---
 
-## 🗂 Build Order (recommended)
+## 🗂 Build Order
 
 1. ~~**Services page**~~ ✅ Done
-2. **Contact page** — needed to capture leads immediately
-3. **About page** — builds trust and brand
+2. ~~**About page**~~ ✅ Done
+3. **Contact page** — needed to capture leads immediately ← next up
 4. **Blog** — set up parser + first 2 posts
 5. **SEO + meta** — once all content is final
 6. **Deploy to Vercel** — go live
