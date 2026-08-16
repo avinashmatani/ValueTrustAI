@@ -17,17 +17,21 @@ export default function V2Layout({
             VALUETRUST_AI
           </Link>
           <nav className="hidden md:flex items-center gap-8">
-            {["Platform", "Solutions", "Defense", "Company"].map((item) => (
+            {[
+              { label: "Services", href: "/v2/services" },
+              { label: "About", href: "/v2/about" },
+              { label: "Blog", href: "/v2/blog" },
+            ].map((item) => (
               <Link
-                key={item}
-                href="/v2"
+                key={item.label}
+                href={item.href}
                 className="text-xs font-mono tracking-widest uppercase text-zinc-400 hover:text-white transition-colors"
               >
-                {item}
+                {item.label}
               </Link>
             ))}
             <Link
-              href="/v2"
+              href="/v2/contact"
               className="ml-4 border border-zinc-700 bg-zinc-900/50 px-4 py-2 text-xs font-mono uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all"
             >
               Contact
