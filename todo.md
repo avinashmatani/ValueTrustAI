@@ -59,12 +59,12 @@
 ---
 
 ### 5. SEO & Meta
-**Status:** `title` + `description` set on all pages; `generateMetadata` on blog posts
+**Status:** `title` + `description` + Open Graph tags set on all pages; `metadataBase` configured.
 **Remaining:**
-- [ ] Open Graph image (og:image) for social sharing — one global + per-post
+- [x] Open Graph tags & `metadataBase` configured (placeholder image set)
+- [ ] Replace `/og-image.jpg` with a real image file.
 - [ ] `sitemap.xml` — auto-generate with Next.js `app/sitemap.ts`
 - [ ] `robots.txt` — add `app/robots.ts`
-- [ ] Set canonical domain in metadata once domain is confirmed
 
 ---
 

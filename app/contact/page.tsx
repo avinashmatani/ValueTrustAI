@@ -20,6 +20,7 @@ const INITIAL: FormState = { name: "", email: "", company: "", message: "" };
 export default function ContactPage() {
   const [form, setForm] = useState<FormState>(INITIAL);
   const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -30,15 +31,30 @@ export default function ContactPage() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
+    setErrorMessage(null);
 
-    // TODO: replace with API route or external service (Resend, Formspree, etc.)
-    console.log("Contact form submission:", form);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
 
-    // Simulate async send
-    await new Promise((r) => setTimeout(r, 800));
+      const data = await response.json();
 
-    setStatus("success");
-    setForm(INITIAL);
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || "Failed to send message.");
+      }
+
+      setStatus("success");
+      setForm(INITIAL);
+    } catch (error: any) {
+      console.error("Contact form error:", error);
+      setStatus("error");
+      setErrorMessage(error.message || "An unexpected error occurred. Please try again.");
+    }
   }
 
   return (
@@ -170,6 +186,12 @@ export default function ContactPage() {
                   noValidate
                   className="flex flex-col gap-6"
                 >
+                  {status === "error" && errorMessage && (
+                    <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-600">
+                      {errorMessage}
+                    </div>
+                  )}
+
                   {/* Name */}
                   <div>
                     <label
