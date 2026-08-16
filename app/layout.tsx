@@ -15,12 +15,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://valuetrustai.com"),
   title: {
     default: "ValueTrustAI",
     template: "%s | ValueTrustAI",
   },
-  description:
-    "Intelligent solutions built on a foundation of trust, transparency, and results.",
+  description: "Intelligence you can act on.",
+  openGraph: {
+    title: {
+      default: "ValueTrustAI",
+      template: "%s | ValueTrustAI",
+    },
+    description: "Intelligence you can act on.",
+    url: "https://valuetrustai.com",
+    siteName: "ValueTrustAI",
+    images: [
+      {
+        url: "/og-image.jpg", // Placeholder for Open Graph image
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_AU",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

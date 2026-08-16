@@ -1,6 +1,6 @@
 # ValueTrustAI — Website TODO
 
-> Last updated: 2026-08-16 (session 4)
+> Last updated: 2026-08-16 (session 5)
 > Track progress by changing `[ ]` to `[x]` when complete.
 
 ---
@@ -14,66 +14,72 @@
 - [x] Repo pushed to GitHub → `github.com/avinashmatani/ValueTrustAI` (private)
 - [x] `/services` — Full Services page (4 services, bullet points, "Who this is for", engagement models, CTA)
 - [x] `/about` — Mission, Team Story + stat cards, 4-phase Approach, 5 Values, CTA
-- [x] `/contact` — Lead form (Name, Email, Company, Message), spinner, success state, scoped metadata layout
+- [x] `/contact` — Lead form (Name, Email, Company, Message), spinner, success state
+- [x] `/blog` — Markdown blog (gray-matter + remark), index + post pages, typography plugin, first post
 
 ---
 
 ## 🔲 Still to Do
 
-### 1. `/blog` — Blog Index + Posts
-**Status:** Index stub + one sample `.md` file
-**Needs your input:**
-- [ ] Do you want markdown-based blog posts (MDX/gray-matter) or a CMS (e.g. Contentlayer, Sanity)?
-- [ ] First 2–3 real blog post topics or drafts to publish
-- [ ] For each post:
-  - Title
-  - Slug (URL-friendly, e.g. `what-is-ai-strategy`)
-  - Author name
-  - Publish date
-  - Cover image (optional)
-  - Full content (markdown)
-- [ ] Blog categories / tags (optional)
+### 1. Wire contact form to real email service
+**Status:** Logs to console only — UI is done
+**Pick one:**
+- [ ] **Resend** ← recommended (simple API, free tier 100 emails/day, great DX)
+- [ ] **Formspree** — no backend needed, just swap `handleSubmit` to POST a URL
+- [ ] **SendGrid** — enterprise-grade, more setup required
+
+**Once chosen, also provide:**
+- [ ] Real contact email address (where submissions should arrive)
+- [ ] Calendly / booking link to embed or link in the contact page
 
 ---
 
-### 2. Contact form — wire to real email service
-**Status:** Logs to console; ready to wire
-**Options (pick one):**
-- [ ] **Resend** — recommended, simple API, free tier (100 emails/day)
-- [ ] **Formspree** — no backend needed, just a POST URL
-- [ ] **SendGrid** — enterprise-grade, more setup
-- [ ] **Calendly embed** — replace or supplement the form
+### 2. Content updates (swap placeholders with real info)
+- [ ] Replace placeholder contact email `hello@valuetrustai.com` with real address
+- [ ] Replace stat cards on About page (`50+ projects`, `10+ years`, etc.) with real figures
+- [ ] Add real team member bios + photos to About page (currently narrative only)
+- [ ] Add Calendly embed or booking link to Contact page
+- [ ] Add partner / credential logos if applicable (Microsoft, AWS, Google Cloud, etc.)
 
 ---
 
-### 3. Global / Branding
-**Needs your input:**
-- [ ] **Logo** — do you have a logo file (SVG/PNG)? Currently using text `ValueTrustAI`
-- [ ] **Tagline** — confirm final tagline (currently: *"Intelligence you can act on."*)
-- [ ] **Brand colors** — confirm primary color (currently Indigo). Any specific hex codes?
-- [ ] **Favicon** — custom favicon or generate from logo?
-- [ ] **Google Analytics ID** — if you want analytics
-- [ ] **Domain name** — for meta tags and canonical URLs (e.g. `valuetrustai.com`)
+### 3. Branding
+- [ ] **Logo** — SVG/PNG file to replace text `ValueTrustAI` in Header/Footer
+- [ ] **Tagline** — confirm or update: currently *"Intelligence you can act on."*
+- [ ] **Brand colors** — currently Indigo (#4f46e5). Provide hex codes to change
+- [ ] **Favicon** — generate from logo once finalised
 
 ---
 
-### 4. SEO & Meta
-**Status:** `title` + `description` set on all pages built so far
+### 4. Blog — more posts
+- [ ] Add 2–3 more real posts to `content/blog/` (just drop `.md` files)
+- [ ] Frontmatter schema: `title`, `date` (YYYY-MM-DD), `description`
+- [ ] Optional: add `author` field to frontmatter + display on post page
+
+---
+
+### 5. SEO & Meta
+**Status:** `title` + `description` set on all pages; `generateMetadata` on blog posts
 **Remaining:**
-- [ ] Open Graph images for social sharing
-- [ ] `sitemap.xml` and `robots.txt`
+- [ ] Open Graph image (og:image) for social sharing — one global + per-post
+- [ ] `sitemap.xml` — auto-generate with Next.js `app/sitemap.ts`
+- [ ] `robots.txt` — add `app/robots.ts`
+- [ ] Set canonical domain in metadata once domain is confirmed
 
 ---
 
-### 5. Deployment
+### 6. Analytics
+- [ ] Google Analytics 4 tracking ID — add via `next/script` in root layout
+- [ ] Or: Plausible / Fathom (privacy-first, simpler)
+
+---
+
+### 7. Deployment
 **Status:** Not yet deployed
 **Needs your input:**
-- [ ] Hosting preference:
-  - **Vercel** ← recommended (native Next.js, free tier, one-command deploy)
-  - Netlify
-  - Self-hosted / VPS
-- [ ] Domain already purchased? If yes, where (GoDaddy, Namecheap, Cloudflare)?
-- [ ] Environment variables needed once contact form is wired (e.g. `RESEND_API_KEY`)
+- [ ] **Vercel** ← recommended (one `vercel` command, free tier, native Next.js)
+- [ ] Domain purchased? Where registered? (GoDaddy, Cloudflare, Namecheap)
+- [ ] Env vars once form is wired: `RESEND_API_KEY` etc.
 
 ---
 
@@ -83,20 +89,20 @@
 |---|---|
 | ~~Final services list~~ | ✅ Done |
 | ~~Company story / mission~~ | ✅ Done |
-| ~~Team narrative~~ | ✅ Done |
-| ~~Contact form (fields + UI)~~ | ✅ Done |
+| ~~Contact form (UI)~~ | ✅ Done |
+| ~~Blog setup + first post~~ | ✅ Done |
 | Contact form destination (email service) | ⏳ Needed |
-| Contact email address | ⏳ Needed |
+| Real contact email address | ⏳ Needed |
 | Calendly / booking link | ⏳ Needed |
-| Blog post drafts (at least 1–2) | ⏳ Needed |
-| Logo file | ⏳ Needed |
-| Confirmed tagline | ⏳ Needed |
-| Brand colors / hex codes | ⏳ Needed |
+| Logo file (SVG/PNG) | ⏳ Needed |
 | Domain name | ⏳ Needed |
 | Hosting preference | ⏳ Needed |
+| More blog posts (topics or drafts) | ⏳ Needed |
+| Real team member bios + photos | ⏳ Optional |
+| Confirmed tagline | ⏳ Optional |
+| Brand colors / hex codes | ⏳ Optional |
 | Analytics tracking ID | ⏳ Optional |
 | Partner / credential logos | ⏳ Optional |
-| Real team member bios + photos | ⏳ Optional |
 
 ---
 
@@ -105,7 +111,7 @@
 1. ~~**Services page**~~ ✅ Done
 2. ~~**About page**~~ ✅ Done
 3. ~~**Contact page**~~ ✅ Done
-4. **Blog** — set up markdown parser + first 2 posts ← next up
-5. **Wire contact form** — to email service once you choose one
-6. **SEO** — Open Graph images, sitemap, robots.txt
+4. ~~**Blog**~~ ✅ Done
+5. **Wire contact form** — once email service is chosen ← next decision
+6. **SEO** — sitemap, robots.txt, Open Graph images
 7. **Deploy to Vercel** — go live

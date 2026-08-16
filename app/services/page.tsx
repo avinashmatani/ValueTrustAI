@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "From AI strategy and custom model development to workflow automation and team upskilling — ValueTrustAI delivers end-to-end AI consulting for businesses ready to move.",
+  openGraph: {
+    title: "Services | ValueTrustAI",
+    description: "From AI strategy and custom model development to workflow automation and team upskilling — ValueTrustAI delivers end-to-end AI consulting for businesses ready to move.",
+    url: "https://valuetrustai.com/services",
+  },
 };
 
 // ─── Data ────────────────────────────────────────────────────────────────────

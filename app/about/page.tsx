@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "ValueTrustAI is an AI consulting firm built by practitioners — engineers, data scientists, and strategists who have delivered AI in production, not just on paper.",
+  openGraph: {
+    title: "About | ValueTrustAI",
+    description: "ValueTrustAI is an AI consulting firm built by practitioners — engineers, data scientists, and strategists who have delivered AI in production, not just on paper.",
+    url: "https://valuetrustai.com/about",
+  },
 };
 
 // ─── Data ────────────────────────────────────────────────────────────────────

@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: "Blog",
   description:
     "Insights, perspectives, and practical guidance on AI strategy, automation, and building production AI systems — from the ValueTrustAI team.",
+  openGraph: {
+    title: "Blog | ValueTrustAI",
+    description: "Insights, perspectives, and practical guidance on AI strategy, automation, and building production AI systems — from the ValueTrustAI team.",
+    url: "https://valuetrustai.com/blog",
+  },
 };
 
 export default function BlogIndexPage() {

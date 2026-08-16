@@ -2,9 +2,14 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "AI Consulting & Engineering",
   description:
     "ValueTrustAI helps businesses design, build, and deploy intelligent AI systems — from strategy through to production.",
+  openGraph: {
+    title: "AI Consulting & Engineering | ValueTrustAI",
+    description: "ValueTrustAI helps businesses design, build, and deploy intelligent AI systems — from strategy through to production.",
+    url: "https://valuetrustai.com",
+  },
 };
 
 // ─── Data ────────────────────────────────────────────────────────────────────

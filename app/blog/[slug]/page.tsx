@@ -20,6 +20,13 @@ export async function generateMetadata(
   return {
     title: post.title,
     description: post.description,
+    openGraph: {
+      title: `${post.title} | ValueTrustAI`,
+      description: post.description,
+      url: `https://valuetrustai.com/blog/${slug}`,
+      type: "article",
+      publishedTime: post.date,
+    },
   };
 }
 
